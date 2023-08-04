@@ -43,26 +43,35 @@ describe("Employee Manager 1.2", () => {
           4. Open Bernice Ortiz
           5. Verify the name field is the original name
           */
+      //  this fiinds bernice in the llist then clicks on her
       await driver.findElement(bernice).click();
+      //   this waits until the name input is loaded onto the DOM
       await driver.wait(
         until.elementIsVisible(await driver.findElement(nameInput))
       );
+      //   this clears the name input
       await driver.findElement(nameInput).clear();
+      //   this adds text to the name input
       await driver.findElement(nameInput).sendKeys("Test Name");
+      //   this finds phil in the list and clicks on him
       await driver.findElement(phillip).click();
+      //   this waits until the nameDisplay is loaded on the DOM and checks to make sure Phil is on the display
       await driver.wait(
         until.elementTextContains(
           await driver.findElement(nameDisplay),
           "Phillip"
         )
       );
+      //   this finds Bernice in the list and clicks on her
       await driver.findElement(bernice).click();
+      //   this waits until Bernice gets lloaded onto the name display andd checks that it is  her
       await driver.wait(
         until.elementTextContains(
           await driver.findElement(nameDisplay),
           "Bernice"
         )
       );
+      //   this checks to make sure that Bernice is the one in the name input
       expect(
         await (await driver.findElement(nameInput)).getAttribute("value")
       ).toBe("Bernice Ortiz");
