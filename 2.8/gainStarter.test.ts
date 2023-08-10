@@ -18,14 +18,6 @@ class Animal {
  * @param {string} food - as expected
  * @param {boolean} saltwater - true if the fish is a saltwater fish
  */
-
-/**
- * Bird extends Animal, but takes an additional property, and has an additional method, fly().
- * @param {string} name - as expected
- * @param {string} sound - as expected
- * @param {string} food - as expected
- * @param {number} flightSpeed - the flight speed of the bird, in meters/second. This should be 0 for flightless birds.
- */
 class Fish extends Animal {
   saltwater: boolean;
   constructor(name: string, food: string, saltwater: boolean) {
@@ -41,6 +33,13 @@ class Fish extends Animal {
     } fish.`;
   }
 }
+/**
+ * Bird extends Animal, but takes an additional property, and has an additional method, fly().
+ * @param {string} name - as expected
+ * @param {string} sound - as expected
+ * @param {string} food - as expected
+ * @param {number} flightSpeed - the flight speed of the bird, in meters/second. This should be 0 for flightless birds.
+ */
 
 class Bird extends Animal {
   flightSpeed: number;
