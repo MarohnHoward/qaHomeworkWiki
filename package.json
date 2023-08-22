@@ -26,7 +26,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "chromedriver": "^107.0.3",
+    "chromedriver": "^116.0.0",
     "geckodriver": "^3.2.0",
     "selenium-webdriver": "^4.5.0"
   }
