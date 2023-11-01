@@ -17,3 +17,22 @@ export function myFunctionn(myNum: number): string {
       return "negative";
     }
   }
+
+
+
+
+  function blockBuster(movie: string): string {
+    if (movie == "Movie One") {
+      return "Free Guy"; 
+    } else if (movie == "Movie Two") {
+      return "Everything,Everywhere, All at Once"; 
+    }else if (movie == "Movie Three") {
+      return "Surf's Up"; 
+    } else if (movie == "Movie Four") {
+      return "The Italian Job"; 
+    } else if (movie == "Movie Five") {
+      return "Fast X"
+    } else {
+      return `I'm sorry we do not have ${movie}!`
+    }
+  }

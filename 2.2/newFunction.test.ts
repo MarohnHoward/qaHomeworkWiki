@@ -1,3 +1,4 @@
+//!Here we are importing our function called myFunciton from our newFunction.ts file so we can use it in our test.
 import { myFunction } from "./newFunction";
 
 describe("myFunction", () => {
@@ -14,3 +15,24 @@ describe("myFunction", () => {
     expect(myFunction(-1)).toBe("negative");
   });
 });
+
+
+import { blockBuster } from "./newFunction";
+
+describe('Testing Block Buster', () => {
+  it('should return the movie set for MovieOne', () => {
+    expect(blockBuster()).toBe(""); 
+  }); 
+  it("should return the movie set for movie two", () => {
+    expect(blockBuster()).toBe(""); 
+  }); 
+  it("should return the movie set for movie three", () => {
+    expect(blockBuster()).toBe(""); 
+  }); 
+  it("should return the movie set for movie four", () => {
+    expect(blockBuster()).toBe(""); 
+  });
+  it("should return the movie set for movie five", () => {
+    expect(blockBuster()).toBe(""); 
+  }); 
+}); 
