@@ -1,3 +1,4 @@
+//importing what i need from selenium 
 import {
     Builder,
     By,
@@ -9,7 +10,7 @@ import {
 } from "selenium-webdriver";
 
 const chromedriver = require("chromedriver");
-
+//Building chrome for our test
 const driver: WebDriver = new Builder()
     .withCapabilities(Capabilities.chrome())
     .build();
@@ -18,14 +19,14 @@ const marnie: By = By.name("employee2");
 const phillip: By = By.name("employee3");
 const nameDisplay: By = By.id("employeeTitle");
 const nameInput: By = By.name("nameEntry");
-const phoneInput: By = By.name("phoneEntry");
-const titleInput: By = By.name("titleEntry");
+/*const phoneInput: By = By.name("phoneEntry");
+const titleInput: By = By.name("titleEntry");*/
 const saveButton: By = By.id("saveBtn");
 const cancelButton: By = By.name("cancel");
 const errorCard: By = By.css(".errorCard");
 
 describe("Employee Manager 1.2", () => {
-
+//what is a before each 
     beforeEach(async () => {
         await driver.get(
         "https://devmountain-qa.github.io/employee-manager/1.2_Version/index.html"
@@ -64,7 +65,9 @@ describe("Employee Manager 1.2", () => {
             "Bernice"
             )
         );
-      
+        expect(
+            await (await driver.findElement(nameInput)).getAttribute("value")
+        ).toBe("Bernice Ortiz");
         });
 
         test("A canceled change doesn't persist", async () => {
@@ -81,9 +84,10 @@ describe("Employee Manager 1.2", () => {
             );
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys("Test Name");
-            await driver.findElement(cancelButton).click(); 
-            // idk what to put for getAttribute - ask Mars! 
-         
+            await driver.findElement(cancelButton).click();
+            expect(
+                await (await driver.findElement(nameInput)).getAttribute("value")
+            ).toBe("Phillip Weaver");
         });
 
         test("A saved change persists", async () => {
@@ -104,10 +108,16 @@ describe("Employee Manager 1.2", () => {
             await driver.findElement(nameInput).sendKeys("Test Name");
             await driver.findElement(saveButton).click();
             await driver.findElement(phillip).click();
-         
+            await driver.wait(
+                until.elementTextContains(
+                await driver.findElement(nameDisplay),
+                "Phillip"
+                )
+            );
             await driver.findElement(bernice).click();
-            // so getAttribute needs to be "value"? what exactly is this below - ask Mars
-          
+            expect(
+                await (await driver.findElement(nameInput)).getAttribute("value")
+            ).toBe("Test Name");
     });
 });
 
