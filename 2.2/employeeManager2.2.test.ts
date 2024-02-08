@@ -1,28 +1,23 @@
-import {
-    Builder,
-    By,
-    Capabilities,
-    until,
-    WebDriver,
-    WebElement,
-    Key,
-} from "selenium-webdriver";
+// For this assignment you will need to fill out the locators for the variables below
+// and use those variables to fill out the tests below. 
+// Read what the test is supposed to do and insert the variables in the () after findElement.
+
+import { Builder, By, Capabilities, until, WebDriver, WebElement, Key,} from "selenium-webdriver";
 
 const chromedriver = require("chromedriver");
 
-const driver: WebDriver = new Builder()
-    .withCapabilities(Capabilities.chrome())
-    .build();
-const bernice: By = By.
-const marnie: By = By.
-const phillip: By = By.
-const nameDisplay: By = By.
-const nameInput: By = By.
-const phoneInput: By = By.
-const titleInput: By = By.
-const saveButton: By = By.
-const cancelButton: By = By.
-const errorCard: By = By.
+const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build();
+
+const bernice: By = By. //! DELETE THE COMMENT & FILL IN THE BLANK
+const marnie: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const phillip: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const nameDisplay: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const nameInput: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const phoneInput: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const titleInput: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const saveButton: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const cancelButton: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
+const errorCard: By = By.//! DELETE THE COMMENT & FILL IN THE BLANK
 
 describe("Employee Manager 1.2", () => {
 
